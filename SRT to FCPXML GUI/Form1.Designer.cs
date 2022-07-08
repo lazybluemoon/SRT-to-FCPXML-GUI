@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -85,7 +88,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(66, 1049);
+            this.button2.Location = new System.Drawing.Point(66, 1147);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(297, 58);
             this.button2.TabIndex = 4;
@@ -95,7 +98,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(407, 1049);
+            this.button3.Location = new System.Drawing.Point(407, 1147);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(297, 58);
             this.button3.TabIndex = 5;
@@ -125,7 +128,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(284, 1190);
+            this.label5.Location = new System.Drawing.Point(284, 1242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(205, 41);
             this.label5.TabIndex = 10;
@@ -133,7 +136,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 1259);
+            this.textBox2.Location = new System.Drawing.Point(66, 1311);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -141,11 +144,30 @@
             this.textBox2.TabIndex = 11;
             this.textBox2.WordWrap = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(66, 1034);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 41);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Font";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(159, 1031);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(545, 49);
+            this.comboBox1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 1387);
+            this.ClientSize = new System.Drawing.Size(786, 1439);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -156,8 +178,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SRT to FCPXML";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,5 +199,7 @@
         private Label label3;
         private Label label5;
         private TextBox textBox2;
+        private Label label4;
+        private ComboBox comboBox1;
     }
 }

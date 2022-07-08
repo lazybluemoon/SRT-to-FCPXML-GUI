@@ -46,6 +46,7 @@ namespace SRT_to_FCPXML_GUI
                     cm.printFile();
                 }
             }
+            MessageBox.Show("All files are done!");
         }
 
         private void button4_Click(object sender, EventArgs e)

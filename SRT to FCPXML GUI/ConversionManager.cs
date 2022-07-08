@@ -22,7 +22,25 @@ namespace SRT_to_FCPXML_GUI
             "        <event name=\"Subtitles\">\n" +
             "            <project name=\"Subtitles\">\n" +
             "                <sequence format=\"r0\" tcStart=\"3600/1s\" duration=\"1258/60s\" tcFormat=\"NDF\">\n" +
-            "                    <spine>";
+            "                    <spine>\n" +
+            "<title lane=\"2\" ref=\"r1\" name=\"Rich\" duration=\"5/1s\" start=\"3600/1s\" offset=\"3600/1s\" enabled=\"1\">\n" +
+            "<text roll-up-height=\"0\">\n" +
+            "<text-style ref=\"ts0\">Delete Me 1</text-style>\n" +
+            "</text>\n" +
+            "<text-style-def id=\"ts0\">\n" +
+            " <text-style font=\"Open Sans\" strokeWidth=\"0\" fontSize=\"96\" bold=\"1\" alignment=\"center\" italic=\"0\" fontColor=\"1 1 1 1\" strokeColor=\"0 0 0 1\" lineSpacing=\"0\"/>\n" +
+            "</text-style-def>\n" +
+            "<adjust-transform anchor=\"0 0\" position=\"0 0\" scale=\"1 1\"/>\n" +
+            "</title>"+
+            "<title lane=\"1\" ref=\"r1\" name=\"Rich\" duration=\"5/1s\" start=\"3600/1s\" offset=\"3600/1s\" enabled=\"1\">\n" +
+            "<text roll-up-height=\"0\">\n" +
+            "<text-style ref=\"ts0\">Delete Me 2</text-style>\n" +
+            "</text>\n" +
+            "<text-style-def id=\"ts0\">\n" +
+            " <text-style font=\"Open Sans\" strokeWidth=\"0\" fontSize=\"96\" bold=\"1\" alignment=\"center\" italic=\"0\" fontColor=\"1 1 1 1\" strokeColor=\"0 0 0 1\" lineSpacing=\"0\"/>\n" +
+            "</text-style-def>\n" +
+            "<adjust-transform anchor=\"0 0\" position=\"0 0\" scale=\"1 1\"/>\n" +
+            "</title>";
         string closing_boilerplate = " </spine>\n" +
             "                </sequence>\n" +
             "            </project>\n" +
