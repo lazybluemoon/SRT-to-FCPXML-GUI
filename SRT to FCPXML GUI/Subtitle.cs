@@ -15,6 +15,20 @@ namespace SRT_to_FCPXML_Core
         public Subtitle(string text, string beginningTime, string endingTime)
         {
             this.text = text;
+            this.text = this.text.Replace(",", "");
+            this.text = this.text.Replace(".", "");
+
+            string[] pieces = this.text.Split(" ");
+            string first = ""+pieces[1][0];
+            pieces[1] = first.ToUpper() + pieces[1].Substring(1,pieces[1].Length-1);
+            this.text = "";
+           for(int i = 0; i < pieces.Length;i++)
+            {
+                this.text += " " + pieces[i];
+            }
+            this.text = this.text.Trim();
+            
+
             this.beginningTime = beginningTime;
             this.endingTime = endingTime;
         }
@@ -24,7 +38,7 @@ namespace SRT_to_FCPXML_Core
             return "Starting Time: " + beginningTime + " Ending Time: " + endingTime + " Text: " + text;
         }
 
-        public string create_FCPXML_title()
+        public string create_FCPXML_title(string font = "Berlin Sans FB Demi")
         {
             string res = "";
 
@@ -40,7 +54,7 @@ namespace SRT_to_FCPXML_Core
                 String line3 = "                                <text-style ref=\"ts0\">" + text + "</text-style>\n";
                 String line4 = "                            </text>\n" +
                                                     "                            <text-style-def id=\"ts0\">\n" +
-                                       "                            <text-style font=\"Berlin Sans FB Demi\" bold=\"1\" fontColor=\"1 1 1 1\" lineSpacing=\"0\" strokeWidth=\"5\" strokeColor=\"0 0 0 1\" fontSize=\"96\" italic=\"0\" alignment=\"center\"/>\n" +
+                                       "                            <text-style font=\""+font+"\" bold=\"1\" fontColor=\"1 1 1 1\" lineSpacing=\"0\" strokeWidth=\"5\" strokeColor=\"0 0 0 1\" fontSize=\"96\" italic=\"0\" alignment=\"center\"/>\n" +
                                     "                            </text-style-def>\n" +
                         "                            <adjust-transform scale=\"1 1\" anchor=\"0 0\" position=\"0 -37.1296\"/>\n" +
                         "                        </title>\n";
@@ -66,7 +80,7 @@ namespace SRT_to_FCPXML_Core
                 String line3 = "                                <text-style ref=\"ts0\">" + output + "</text-style>\n";
                 String line4 = "                            </text>\n" +
                                                     "                            <text-style-def id=\"ts0\">\n" +
-                                       "                            <text-style font=\"Berlin Sans FB Demi\" bold=\"1\" fontColor=\"1 1 1 1\" lineSpacing=\"0\" strokeWidth=\"5\" strokeColor=\"0 0 0 1\" fontSize=\"96\" italic=\"0\" alignment=\"center\"/>\n" +
+                                       "                            <text-style font=\"" + font + "\" bold=\"1\" fontColor=\"1 1 1 1\" lineSpacing=\"0\" strokeWidth=\"5\" strokeColor=\"0 0 0 1\" fontSize=\"96\" italic=\"0\" alignment=\"center\"/>\n" +
                                     "                            </text-style-def>\n" +
                         "                            <adjust-transform scale=\"1 1\" anchor=\"0 0\" position=\"0 -37.1296\"/>\n" +
                         "                        </title>\n";
@@ -76,7 +90,7 @@ namespace SRT_to_FCPXML_Core
                 String line7 = "                                <text-style ref=\"ts0\">" + output + "</text-style>\n";
                 String line8 = "                            </text>\n" +
                                                     "                            <text-style-def id=\"ts0\">\n" +
-                                       "                            <text-style font=\"Berlin Sans FB Demi\" bold=\"1\" fontColor=\""+findColor()+ "\" lineSpacing=\"0\" strokeWidth=\"3\" strokeColor=\"" + findColor() + "\" fontSize=\"96\" italic=\"0\" alignment=\"center\"/>\n" +
+                                       "                            <text-style font=\"" + font + "\" bold=\"1\" fontColor=\"" + findColor()+ "\" lineSpacing=\"0\" strokeWidth=\"3\" strokeColor=\"" + findColor() + "\" fontSize=\"96\" italic=\"0\" alignment=\"center\"/>\n" +
                                     "                            </text-style-def>\n" +
                         "                            <adjust-transform scale=\"1 1\" anchor=\"0 0\" position=\"0.740741 -36.6667\"/>\n" +
                         "                        </title>\n";
@@ -111,6 +125,8 @@ namespace SRT_to_FCPXML_Core
                     return "1 0 0.764706 1";
                 case "cyan":
                     return "0 1 1 1";
+                case "brown":
+                    return "0.333333 0 0 1";
                 default:
                     return "";
             }
